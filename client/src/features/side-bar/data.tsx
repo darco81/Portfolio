@@ -53,6 +53,6 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const socialLinks = {
-    github: "https://github.com/darco81",
+    github: "https://github.com/darco81?tab=repositories",
     linkedin: "https://www.linkedin.com/in/darco81/",
 };
