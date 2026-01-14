@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Flame } from "lucide-react";
 import { Link } from "wouter";
 import SidebarNavLink from "../components/SidebarNavLink";
 import { menuItems, contactMessages, socialLinks, LocalizedLabel } from "../data";
@@ -149,6 +149,36 @@ function DesktopSidebar({ location, setIsContactOpen, toggleLang, lang }: Deskto
                         </div>
                     ))}
                 </nav>
+
+                {/* Featured Section - Open Source */}
+                <div className="mt-4 mb-auto">
+                    {/* Divider */}
+                    <div className="h-px bg-[#4ade80]/40 mb-3" />
+
+                    {/* Section Header */}
+                    <div className="text-[10px] uppercase tracking-widest text-[var(--matrix-mid-light)] mb-2 px-1">
+                        Open Source
+                    </div>
+
+                    {/* Featured Card */}
+                    <a
+                        href="https://github.com/darco81/cdat-pattern"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block p-3 rounded-lg border border-[var(--matrix-primary)]/30 bg-[var(--matrix-primary)]/5 hover:bg-[var(--matrix-primary)]/10 hover:border-[var(--matrix-primary)]/50 transition-all duration-200 group hover:translate-x-1"
+                    >
+                        <div className="flex items-center gap-2 mb-1">
+                            <Flame className="w-4 h-4 text-orange-500 group-hover:animate-pulse" />
+                            <span className="text-sm font-medium text-[var(--matrix-white)]">CDAT Pattern</span>
+                            <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-gradient-to-r from-orange-500 to-red-500 text-white">
+                                HOT
+                            </span>
+                        </div>
+                        <p className="text-[11px] text-[var(--matrix-mid-light)] leading-tight">
+                            {lang === 'pl' ? 'Wzorzec testowy dla Playwright' : 'Testing pattern for Playwright'}
+                        </p>
+                    </a>
+                </div>
 
                 <div className="mb-4 flex justify-center">
                     <button

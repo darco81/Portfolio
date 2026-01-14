@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { Menu, X, ChevronDown, ChevronUp, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp, Mail, Flame } from "lucide-react";
 import { menuItems, contactMessages, socialLinks } from "../data";
 import { useLanguage } from "../../../shared/components/common/LanguageContext";
 import React, { useState, useEffect } from "react";
@@ -209,6 +209,34 @@ function MobileMenu({
                                         </AnimatePresence>
                                     </div>
                                 ))}
+
+                                {/* Featured Section - Open Source */}
+                                <div className="mt-4 pt-3 border-t border-[#4ade80]/40">
+                                    {/* Section Header */}
+                                    <div className="text-[10px] uppercase tracking-widest text-[var(--matrix-mid-light)] mb-2 px-1">
+                                        Open Source
+                                    </div>
+
+                                    {/* Featured Card */}
+                                    <a
+                                        href="https://github.com/darco81/cdat-pattern"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block p-3 rounded-lg border border-[var(--matrix-primary)]/30 bg-[var(--matrix-primary)]/5"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <Flame className="w-4 h-4 text-orange-500" />
+                                            <span className="text-sm font-medium text-[var(--matrix-white)]">CDAT Pattern</span>
+                                            <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-gradient-to-r from-orange-500 to-red-500 text-white">
+                                                HOT
+                                            </span>
+                                        </div>
+                                        <p className="text-[11px] text-[var(--matrix-mid-light)] leading-tight">
+                                            {lang === 'pl' ? 'Wzorzec testowy dla Playwright' : 'Testing pattern for Playwright'}
+                                        </p>
+                                    </a>
+                                </div>
                             </nav>
                         </motion.div>
                     </motion.div>
