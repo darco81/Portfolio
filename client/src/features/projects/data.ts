@@ -16,6 +16,7 @@ export type Project = {
   link: string;
   demo: string;
   lastCommitDate?: string; // Added this optional field
+  featured?: boolean; // For highlighting special projects like CDAT Pattern
 };
 
 export const projectsMessages: ProjectsMessages = {
@@ -61,6 +62,19 @@ export const projects: Project[] = [
     },
     link: "https://github.com/darco81/k6-dashboard",
     demo: "",
+  },
+  {
+    title: {
+      pl: "CDAT Pattern - Wzorzec Architektoniczny dla Playwright",
+      en: "CDAT Pattern - Architectural Pattern for Playwright",
+    },
+    description: {
+      pl: "Nowoczesny wzorzec architektoniczny Components-Data-Actions-Tests dla testów w Playwright i TypeScript. Alternatywa dla Page Object Model z czterema warstwami: lokatory UI, definicje typów i dane testowe, logika biznesowa, scenariusze testowe. Zweryfikowany w 9 systemach produkcyjnych przez 18 miesięcy.",
+      en: "Modern Components-Data-Actions-Tests architectural pattern for Playwright and TypeScript testing. Alternative to Page Object Model with four layers: UI locators, type definitions and test data, business logic, test scenarios. Battle-tested across 9 production systems over 18 months.",
+    },
+    link: "https://github.com/darco81/cdat-pattern",
+    demo: "",
+    featured: true,
   },
   {
     title: {
