@@ -9,7 +9,7 @@ import {
   CardFooter,
 } from "@/shared/components/ui/card";
 import { SiGithub } from "react-icons/si";
-import { ExternalLink, Clock } from "lucide-react";
+import { ExternalLink, Clock, Flame } from "lucide-react";
 import { useLanguage } from "../../shared/components/common/LanguageContext";
 import { projectsMessages, projects as initialProjects, Project } from "./data";
 import MatrixEffect from "@/shared/components/common/MatrixRain";
@@ -78,6 +78,12 @@ const Projects = () => {
                   <CardHeader>
                     <CardTitle className="text-[var(--matrix-white)] text-xl font-bold flex items-center gap-2 flex-wrap">
                       {project.title[lang]}
+                      {project.featured && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded bg-gradient-to-r from-orange-500 to-red-500 text-white animate-pulse">
+                          <Flame className="w-3 h-3" />
+                          HOT
+                        </span>
+                      )}
                       {isRecentCommit(project.lastCommitDate) && (
                         <span className="inline-flex items-center px-2 py-0.5 text-xs font-bold rounded bg-[#22b455] text-[var(--matrix-bg)]">
                           {lang === "en" ? "NEW" : "NOWY"}
